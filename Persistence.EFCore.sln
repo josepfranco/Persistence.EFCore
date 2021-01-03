@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence.EFCore", "src\Persistence.EFCore\Persistence.EFCore.csproj", "{9B8FA89D-BE3B-49A5-84BD-F197B1C1BB8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence.EFCore.Tests", "src\Persistence.EFCore.Tests\Persistence.EFCore.Tests.csproj", "{002A067C-531B-414E-8330-9B8F104E5094}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B8FA89D-BE3B-49A5-84BD-F197B1C1BB8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B8FA89D-BE3B-49A5-84BD-F197B1C1BB8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B8FA89D-BE3B-49A5-84BD-F197B1C1BB8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B8FA89D-BE3B-49A5-84BD-F197B1C1BB8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{002A067C-531B-414E-8330-9B8F104E5094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{002A067C-531B-414E-8330-9B8F104E5094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{002A067C-531B-414E-8330-9B8F104E5094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{002A067C-531B-414E-8330-9B8F104E5094}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

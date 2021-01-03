@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+
+        <!-- NUGET METADATA -->
+        <VersionPrefix>2.0.0</VersionPrefix>
+        <VersionSuffix>$(VersionSuffix)</VersionSuffix>
+        <Authors>José Franco</Authors>
+        <RepositoryUrl>https://github.com/josepfranco/Persistence.EFCore</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <LangVersion>default</LangVersion>
+        <!--                -->
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Abstractions.Persistence" Version="1.0.4" />
+        <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Npgsql" Version="5.0.1.1" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="5.0.0" />
+    </ItemGroup>
+
+</Project>

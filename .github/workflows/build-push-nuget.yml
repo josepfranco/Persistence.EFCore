@@ -14,25 +14,30 @@ jobs:
     - name: checkout repository
       uses: actions/checkout@v1
     
-    # setup nuget
-    - name: setup nuget
-      uses: NuGet/setup-nuget@v1.0.2
+    # setup dotnet cli
+    - name: setup dotnet CLI
+      uses: actions/setup-dotnet@v1.7.2
+      env:
+        NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        source-url: https://nuget.pkg.github.com/josepfranco/index.json
+        owner: josepfranco
     
-    # add nuget sources
-    - name: add nuget sources
-      run: dotnet nuget add source https://nuget.pkg.github.com/josepfranco/index.json -n github -u josepfranco -p ${{ secrets.GH_PACKAGES_TOKEN }} --store-password-in-clear-text
-      shell: bash
-      
     # build the binaries
     - name: build with dotnet
-      run: dotnet build --configuration Release --version-suffix prerelease-$(date +%Y%m%d%H%M%S) -o "./BUILDS/Release/"
+      run: dotnet build --configuration Release
+      shell: bash
+    
+    # pack the binaries into nuget
+    - name: pack with dotnet
+      run: dotnet pack --configuration Release --version-suffix 'ci-${{ github.run_number }}' --output './BUILDS/Release/'
       shell: bash
     
     # publish to github packages nuget
     - name: publish to packages
-      run: |
-           for f in ./BUILDS/Release/*.nupkg
-           do
-             curl -vX PUT -u "josepfranco:${{ secrets.GH_PACKAGES_TOKEN }}" -F package=@$f https://nuget.pkg.github.com/josepfranco/
-           done
-      shell: bash
+      uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
+      with:
+        nupkg-path: './BUILDS/Release/'
+        repo-owner: 'josepfranco'
+        gh-user: 'josepfranco'
+        token: ${{ secrets.GITHUB_TOKEN }}

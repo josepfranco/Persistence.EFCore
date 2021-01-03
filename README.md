@@ -1,2 +1,2 @@
-# Templates.CSharp
-Template repository for C# projects.
+# Persistence.EFCore
+EFCore integration with the persistence abstractions in C#.

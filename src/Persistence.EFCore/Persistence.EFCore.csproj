@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TargetFramework>net5.0</TargetFramework>
 
         <!-- NUGET METADATA -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -10,6 +10,7 @@
         <Authors>José Franco</Authors>
         <RepositoryUrl>https://github.com/josepfranco/Persistence.EFCore</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
+        <LangVersion>default</LangVersion>
         <!--                -->
     </PropertyGroup>
 
